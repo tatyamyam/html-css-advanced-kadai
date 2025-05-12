@@ -15,27 +15,23 @@ p {
 PC用のスタイル 
 =================*/
 @media screen and (min-width: 768px) {
-  /* 横幅設定 */
   body {
     max-width: 1080px;
     min-width: 960px;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
   }
 
-  /* ヘッダー */
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
-  /* ナビゲーションのレイアウト */
   #nav-pc {
     text-align: right;
     font-size: 14px;
-    padding-top: 15px;
   }
 
-  /* ナビゲーションのリンクの装飾設定 */
   #nav-pc>a {
     text-decoration: none;
     margin-left: 20px;
@@ -52,12 +48,7 @@ PC用のスタイル
     text-decoration: underline;
   }
 
-  /* Step4: SP用メニューをPCで非表示 */
-  #menu-sp {
-    display: none;
-  }
-
-  #nav-sp {
+  #menu-sp, #nav-sp {
     display: none;
   }
 }
@@ -71,38 +62,44 @@ PC用のスタイル
     margin: 0;
   }
 
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
   #nav-pc {
     display: none;
   }
 
   #menu-sp {
-    float: right;
-    padding: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
   }
 
   #nav-sp {
     background-color: #ce933e;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     display: none;
     z-index: 100;
-  }
-
-  #nav-sp ul {
-    padding-left: 0;
-  }
-
-  #nav-sp li {
-    list-style: none;
+    padding-top: 20px;
+    box-sizing: border-box;
   }
 
   #close {
     position: absolute;
     top: 20px;
     right: 20px;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
   }
 
   #logo-sp {
@@ -110,7 +107,7 @@ PC用のスタイル
     display: block;
   }
 
-  #nav-sp a {
+  #nav-sp a.menu {
     display: block;
     color: #ffffff;
     text-decoration: none;
@@ -119,7 +116,8 @@ PC用のスタイル
     font-size: 16px;
     background-image: url("images/arrow.png");
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: right center;
+    line-height: 44px;
   }
 
   #nav-sp a:hover {
